@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejercicio CyPLP</title>
+</head>
+
+<body>
+    <textarea name="textarea" id="campo" rows="10" cols="50" placeholder="Escribe algo..."></textarea>
+    <button id="boton" type="button">Validar</button>
+    <button id="transformar" type="button">Quitar numeros</button>
+
+</body>
+
+
+<script>
+    // VALIDA SI EL CAMPO ES NULO O SI EL CONTENIDO DEL MISMO ES NUMÉRICO O ALFANUMÉRICO.
+    const app = document.getElementById("campo");
+    const boton = document.getElementById("boton");
+    const transformar = document.getElementById("transformar");
+    var valoresAceptados = /^[0-9]+$/;
+    boton.onclick = () => {
+        if (!app.value) {
+            alert("Campo nulo.");
+        } else if (app) {
+            if (isNaN(app.value)) {
+                alert("No es un número");
+            } else {
+                alert("El campo contiene numeros");
+            }
+        }
+    };
+    //LE QUITA LOS NÚMEROS AL CAMPO INGRESADO.
+    transformar.onclick = () => {
+        const valor = document.getElementById('campo').value;
+        const valorSinNumeros = valor.replace(/[0-9]/g, '');
+        alert(valorSinNumeros);
+    };
+</script>
+
+</html>
