@@ -4,10 +4,10 @@ var transformar = document.getElementById("transformar") as HTMLElement;
 var valoresAceptados: RegExp = /^[0-9]+$/;
 
 boton.onclick = () => {
-    if (!(app as HTMLInputElement).value) {
+    if (!(app as HTMLInputElement).value.trim()) {
         alert("Campo nulo.");
-    } else if ((app as HTMLInputElement).value) {
-        if (isNaN((Number((app as HTMLInputElement).value)))) {
+    } else if ((app as HTMLInputElement).value.trim()) {
+        if (isNaN((Number((app as HTMLInputElement).value.trim())))) {
             alert("Es un string");
         } else {
             alert("El campo contiene solo numeros");
